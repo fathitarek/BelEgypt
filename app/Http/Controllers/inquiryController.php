@@ -13,7 +13,6 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use App\Models\inquiry;
 use App\Models\brand;
-
 use Excel;
 class inquiryController extends AppBaseController
 {
@@ -34,11 +33,22 @@ class inquiryController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $this->inquiryRepository->pushCriteria(new RequestCriteria($request));
-        $inquiries = $this->inquiryRepository->all();
+        $brands=brand::oldest()->get();
+      if (isset($_REQUEST['brand_id'])){
+          $this->inquiryRepository->pushCriteria(new RequestCriteria($request));
+          //$inquiries = $this->inquiryRepository->all();
+          $inquiries = inquiry::where('brand_id', $_REQUEST['brand_id'])->get();
+
+      }else{
+      //  $brands=brand::oldest()->get();
+          $this->inquiryRepository->pushCriteria(new RequestCriteria($request));
+          $inquiries = $this->inquiryRepository->all();
+
+      }
 
         return view('inquiries.index')
-            ->with('inquiries', $inquiries);
+            ->with('inquiries', $inquiries)->with('brands',$brands);
+
     }
 
     /**
@@ -158,9 +168,18 @@ class inquiryController extends AppBaseController
         return redirect(route('inquiries.index'));
     }
 
-    public function export() {
-      $records = inquiry::oldest()->get();
-        foreach ($records as $record)
+    public function export($brand_id) {
+      //return $_REQUEST['brand_id'];
+  //  return $request->brand_id;
+      if ($brand_id!=0){
+        $records = inquiry::where('brand_id',$brand_id)->get();
+      }
+      else{
+        $records = inquiry::oldest()->get();
+  //return  $records;
+      }
+      //$records = inquiry::oldest()->get();
+       foreach ($records as $record)
        {
          //return $record['brand_id'];
           $brand_name=brand::findOrFail($record['brand_id']);
@@ -179,4 +198,8 @@ class inquiryController extends AppBaseController
 
                 return redirect(route('inquiries.index'));
     }
+
+
+
+
 }

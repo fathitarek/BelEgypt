@@ -15,7 +15,8 @@ class settingsRepository extends BaseRepository
         'title_ar',
         'email',
         'hotline',
-        'brand_id'
+        'brand_id',
+        'google_analytics'
     ];
 
     /**

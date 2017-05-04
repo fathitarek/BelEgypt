@@ -36,7 +36,7 @@ class inquiry extends Model
     protected $casts = [
         'name' => 'string',
         'mobile' => 'string',
-        'message' => 'string'
+        'message' => 'string',
     ];
 
     /**

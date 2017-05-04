@@ -34,6 +34,13 @@
     <p>{!! $settings->brand->name_en !!}</p>
 </div>
 
+<!-- Brand Id Field -->
+<div class="form-group">
+    {!! Form::label('google_analytics', 'Google Analytics:') !!}
+    <p>{!! $settings->google_analytics !!}</p>
+</div>
+
+
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}

@@ -27,7 +27,11 @@
     {!! Form::label('brand_id', 'Brand:') !!}
     {!! Form::select('brand_id', [null=>'Please Select Brand']+$brands,null, ['class' => 'form-control']) !!}
 </div>
-
+<!-- Google analytics-->
+<div class="form-group col-sm-6">
+  {!! Form::label('google_analytics', 'Google Analytics:') !!}
+{{ Form::textarea('google_analytics') }}
+</div>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

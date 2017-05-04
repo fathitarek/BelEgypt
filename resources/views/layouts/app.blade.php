@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <title>Bel Egypt</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-
+    <meta name="description" content="Free Web tutorials">
+      <meta name="keywords" content="HTML,CSS,XML,JavaScript">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/AdminLTE.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -143,5 +148,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/js/app.min.js"></script>
 
     @yield('scripts')
+    <script>
+
+
+    $("#brand_id").change(function(){
+      filter_form = document.filter_form;
+      if((filter_form.brand_id.value.trim !='') && (filter_form.brand_id.value!='0'))
+        filter_form.submit();
+      // alert(filter_form.brand_id.value);
+//       if ($("#brand_id").val()!=null) {
+//         alert( $("#brand_id").val());
+// /*
+//         $.ajax({
+//           type:'GET'
+//           url: 'url',
+//           data: $("#brand_id").val(),
+//           //success: success,
+//           //dataType: dataType
+// });*/
+//
+//       }
+    });
+    </script>
 </body>
 </html>

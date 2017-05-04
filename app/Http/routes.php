@@ -34,5 +34,5 @@ Route::get('/home', 'HomeController@index');
 Route::resource('brands', 'brandController');
 
 Route::resource('settings', 'settingsController');
-Route::get('export', 'inquiryController@export');
+Route::get('/export/{brand_id}', 'inquiryController@export',compact('brand_id'));
 Route::resource('inquiries', 'inquiryController');

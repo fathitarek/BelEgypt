@@ -12,7 +12,12 @@ class brandRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'name_en',
-        'name_ar'
+        'name_ar',
+        'keyword_en',
+        'keyword_ar',
+        'description_en',
+        'description_ar',
+        'google_analytics'
     ];
 
     /**

@@ -22,7 +22,12 @@ class brand extends Model
 
     public $fillable = [
         'name_en',
-        'name_ar'
+        'name_ar',
+        'keyword_en',
+        'keyword_ar',
+        'description_en',
+        'description_ar',
+        'google_analytics'
     ];
 
     /**
@@ -32,7 +37,12 @@ class brand extends Model
      */
     protected $casts = [
         'name_en' => 'string',
-        'name_ar' => 'string'
+        'name_ar' => 'string',
+        'keyword_en'=>'string',
+        'keyword_ar'=> 'string',
+        'description_en'=> 'string',
+        'description_ar'=> 'string',
+        'google_analytics'=> 'string'
     ];
 
     /**
@@ -42,7 +52,12 @@ class brand extends Model
      */
     public static $rules = [
         'name_en' => 'required',
-        'name_ar' => 'required'
+        'name_ar' => 'required',
+        'keyword_en'=> 'required',
+        'keyword_ar'=> 'required',
+        'description_en'=> 'required',
+        'description_ar'=> 'required',
+        'google_analytics'=> 'required'
     ];
 
     public function settings()

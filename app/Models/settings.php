@@ -25,7 +25,9 @@ class settings extends Model
         'title_ar',
         'email',
         'hotline',
-        'brand_id'
+        'brand_id',
+        'google_analytics'
+
     ];
 
     /**
@@ -38,7 +40,9 @@ class settings extends Model
         'title_ar' => 'string',
         'email' => 'string',
         'hotline' => 'string',
-        'brand_id' => 'integer'
+        'brand_id' => 'integer',
+        'google_analytics'=> 'string'
+
     ];
 
     /**
@@ -51,7 +55,9 @@ class settings extends Model
         'title_ar' => 'required',
         'email' => 'required',
         'hotline' => 'required',
-        'brand_id' => 'required'
+        'brand_id' => 'required',
+        'google_analytics'=> 'string'
+
     ];
 
     public function brand()

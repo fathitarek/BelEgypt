@@ -20,6 +20,7 @@
     {!! Form::text('message', null, ['class' => 'form-control']) !!}
 </div>
 <!-- brand_id-->
+
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
